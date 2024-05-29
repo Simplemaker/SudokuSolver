@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Sudoku Solver</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="header.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="header">
+		<h1><a class="homelink" href="../">Abstract Mathematics and Friends</a></h1>
+		<h2>Sudoku Solver</h2>
+	</div>
+  <p>Solve Sudoku puzzles with 2 separate algorithms with a single click! Type your puzzle into the grid on the left and click solve. This may not complete every puzzle, but it can certianly assist on many!</p>
+
+    <div class="fpanel">
+    <table id="inTable">
+    </table>
+
+    <button onclick="solveButton()">Solve</button>
+    </div>
+    <div class="fpanel" id="outdiv">
+    <table id="outTable">
+    </table>
+    </div>
+
+    <div class="explanation">
+    <h2>How does this work?</h2>
+    <p>
+      Sudoku Solver uses 2 methods to determine how to fill the unit squares of the puzzle. 
+    </p>
+    <p>
+      The first method is, if a unit square is the last one to be filled in its row, column, or group square, it should be the filled with the only unused number in its row, column, or group square.
+    </p>
+    <img src="example1.png">
+    <p>
+      The more advanced method detects if, within a row, column, or group square, there is only one option for a number to be filled. All types of groups must have one of each number, so if a number n can only exist in one square, that square can be filled with n.
+    </p>
+    <img src="example2.png">
+    </div>
+    <script src="board.js"></script>
+    <script src="table.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
